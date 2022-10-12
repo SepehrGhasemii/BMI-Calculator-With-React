@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css');
+$headerFont : 'Nabla', cursive;
+$font : 'Oswald', sans-serif;
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    width: 100%;
+    height: 100vh;
+    transform-style: preserve-3d;
+    user-select: none;
+    font-family: $font;
+    // background-image: linear-gradient(black,blue,black,blue,black);
+    .card{
+        width: 300px;
+        height: 450px;
+        transform-style: preserve-3d;
+        background-color: rgb(49, 46, 46);
+        color: white;
+        transition: .9s;
+        position: relative;
+        transform-origin: center;
+
+        .front{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate3d(-50%, -50%, 100px);
+            transform-style: preserve-3d;
+            border-radius: inherit;
+            box-shadow: 0 0 100px 1px rgba(255, 255, 255, 0.452);
+            #header{
+                width: 100%;
+                height: 20%;
+                font-family: $headerFont;
+            }
+            #weightField,
+            #heightField{
+                height: 20%;
+            }
+            #result{
+                #circle{
+                    position: absolute;
+                    left: 50%;
+                    bottom: 10px;
+                    border-radius: 50%;
+                    width: 120px;
+                    height: 120px;
+                    border: 1px solid white;
+                    transform: translate(-50%, -10px);
+                    box-shadow: 0 5px 20px #ddd inset, 0 3px 0 #999 inset;
+                    color: rgb(92, 92, 92);
+                    background-color: white;
+                    font-size: 3rem;
+                }
+            }
+            .info{
+                position: absolute;
+                right: 2%;bottom: 1%;
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+                color: rgb(92, 92, 92);
+                background-color: white;
+                box-shadow: 0 5px 20px #ddd inset, 0 3px 0 #999 inset;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                // transform: rotate();
+            }
+        }
+        .back{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 50%;top: 50%;
+            transform:translate3d(-50%, -50%, -100px)rotateY(180deg);
+            transform-style: preserve-3d;
+            // background-color: rgb(30, 31, 30);
+            border-radius: inherit;
+            >*{
+                transform: translateZ(100px);
+            }
+            .del{
+                    position: absolute;
+                    right: 2%;bottom: 1%;
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 50%;
+                    color: rgb(92, 92, 92);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                    box-shadow: 0 5px 20px #ddd inset, 0 3px 0 #999 inset;
+                    background: #fff;
+                    border: 1px solid white;
+                    border-radius: 100px;
+            }
+        }
+    }
+}
